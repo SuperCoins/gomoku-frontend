@@ -1,6 +1,6 @@
 import React from 'react';
 import './top-ten.css';
-import axios from 'axios';
+import apiService from '../../services/api-service.js';
 
 class TopTen extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class TopTen extends React.Component {
     }
 
     fetchData() {
-        axios.get('http://192.168.0.37:3000/bots?count=10&orderby=winRate').then(response => {
+        apiService.getLeaderboard().then(response => {
             this.setState({ bots: response.data });
         });
     }

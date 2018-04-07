@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios'
+import apiService from '../../services/api-service.js';
 
 class UploadModal extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class UploadModal extends React.Component {
     data.append('author', this.state.author);
     data.append('password', this.state.password);
 
-    axios.post('http://192.168.0.37:3000/upload', data)
+    apiService.uploadBot(data)
       .then(function (response) {
         document.querySelector('#submit-modal-close').click()
       })
