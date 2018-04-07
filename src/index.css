@@ -1,0 +1,5 @@
+body {
+    /* background: url("https://images.unsplash.com/photo-1482438140854-baef03a5fd56?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7e1b74d813fb042831d06d5a48f8c9d5&auto=format&fit=crop&w=1189&q=80") no-repeat center center fixed; */
+    background: url("https://images.unsplash.com/photo-1512446733611-9099a758e5e5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b30abe95973a2a3c9b7df7237d472b94&auto=format&fit=crop&w=1950&q=80") no-repeat center center fixed;
+    background-size: cover;
+}
