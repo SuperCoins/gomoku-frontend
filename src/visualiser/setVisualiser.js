@@ -33,8 +33,6 @@ class SetVisualiser extends React.Component {
 
   render() {
     let m = this.state.matches.filter(x => x.scores.some(y => y.won))
-
-    console.log('set visualiser rerendering', this.state.matches)
     return (
       <div className="container">
         <div id="visualisers">
