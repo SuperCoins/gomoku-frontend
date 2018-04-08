@@ -1,5 +1,7 @@
 import React from 'react';
+import './upload-model.css';
 import apiService from '../../services/api-service.js';
+import constants from '../../constants.js';
 
 class UploadModal extends React.Component {
   constructor(props) {
@@ -67,6 +69,7 @@ class UploadModal extends React.Component {
                   </div>
                 </div>
                 <div className="modal-footer">
+                  <a role="button" target="_blank" id="example-bot-link" className="btn btn-info" href={constants.EXAMPLE_BOT_URL}>Example Bot</a>
                   <input type="submit" value="Upload" className="btn btn-primary"></input>
                   <button type="button" id="submit-modal-close" className="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
