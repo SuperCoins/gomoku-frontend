@@ -32,7 +32,7 @@ class TopTen extends React.Component {
         return (<tr className={classString} key={bot.botID}>
             <th scope="row">{index + 1}</th>
             <td>{bot.botName}</td>
-            <td>{bot.winRate}</td>
+            <td>{(bot.winRate * 100).toFixed(0)}%</td>
         </tr>);
     }
 
@@ -40,8 +40,8 @@ class TopTen extends React.Component {
         return (
             <div id="top-ten-main">
                 <div className="row justify-content-center">
-                    <div className="col-4">
-                        <h5 id="top-ten-title">Top Ten</h5>
+                    <div className="col">
+                        <h4 id="top-ten-title">Top Ten</h4>
                     </div>
                 </div>
                 <div className="row">
