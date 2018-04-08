@@ -14,7 +14,8 @@ class TopTen extends React.Component {
             2: "table-error"
         }
         this.fetchData();
-        var ws = new WebSocket('ws://192.168.0.37:3001');
+        console.log(process.env)
+        var ws = new WebSocket(`ws://${process.env.REACT_APP_API_ADDRESS}:${process.env.REACT_APP_API_WS_PORT}`);
         ws.onmessage = message => {
             this.fetchData(); 
         }
