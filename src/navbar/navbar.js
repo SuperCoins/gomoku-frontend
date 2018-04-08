@@ -4,6 +4,8 @@ import {
 } from 'react-router-dom';
 import './navbar.css';
 
+import UploadModal from './upload-modal/upload-modal.js'
+
 function Navbar(props) {
   return (
     <nav className="navbar navbar-dark bg-dark">
@@ -20,7 +22,8 @@ function Navbar(props) {
             <NavLink className="nav-link" to="/authors">Authors</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/upload">Upload</NavLink>
+            <button className="btn btn-primary" data-toggle="modal" data-target="#upload-modal">Upload</button>
+            <UploadModal/>
           </li>
         </ul>
       </div>
