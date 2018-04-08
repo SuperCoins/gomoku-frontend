@@ -4,7 +4,7 @@ import apiService from '../../services/api-service.js';
 class UploadModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { author: '', password: '', fileUploaded: false };
+    this.state = { author: '', password: '', fileUploaded: false, botName: '' };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,6 +24,7 @@ class UploadModal extends React.Component {
     data.append('file', this.fileInput.files[0]);
     data.append('author', this.state.author);
     data.append('password', this.state.password);
+    data.append('botName', this.state.botName);
 
     apiService.uploadBot(data)
       .then(function (response) {
@@ -49,6 +50,9 @@ class UploadModal extends React.Component {
               <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                   <input name='author' className="form-control" value={this.state.author} onChange={this.handleChange} id="author-name" placeholder="Author Name" required />
+                </div>
+                <div className="form-group">
+                  <input name='botName' className="form-control" value={this.state.botName} onChange={this.handleChange} id="bot-name" placeholder="Bot Name" required />
                 </div>
                 <div className="form-group">
                   <input name="password" type="password" className="form-control" value={this.state.password} onChange={this.handleChange} id="password" placeholder="Password" required />
