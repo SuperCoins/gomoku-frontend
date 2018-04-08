@@ -6,6 +6,23 @@ function uploadBot(data) {
     return axios.post(constants.API_URL + 'upload', data)
 }
 
+function getSets() {
+    return axios.get(constants.API_URL + 'sets')
+}
+
+function getMatchesFromSetID(id) {
+    return axios.get(constants.API_URL + 'matches/' + id)
+}
+
+function getMatchesOfMostRecentSet() {
+    return getSets().then(response => {
+        let sets = response.data
+        let first = sets[sets.length - 1]
+
+        return getMatchesFromSetID(first.setID)
+    })
+}
+
 function getLeaderboard() {
     return axios.get(constants.API_URL + 'bots?count=10&orderby=winRate')
 }
@@ -19,4 +36,12 @@ function getAuthor(authorID) {
         .then(response => response.data[0]);
 }
 
-export default { uploadBot, getLeaderboard, getBestBot, getAuthor } 
+export default {
+    uploadBot,
+    getLeaderboard,
+    getBestBot,
+    getAuthor,
+    getMatchesFromSetID,
+    getSets, 
+    getMatchesOfMostRecentSet,
+} 

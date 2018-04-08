@@ -1,6 +1,6 @@
 
 const constants = {
-    API_URL: "http://192.168.0.37:3000/"
+    API_URL: "http://82.30.48.217:3000/"
 }
 
 export default constants;

@@ -1,9 +1,0 @@
-canvas {
-  backdrop-filter: blur(10px);
-}
-
-#visualisers {
-  display: flex;
-  flex-direction: row;
-}
-
