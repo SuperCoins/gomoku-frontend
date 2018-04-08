@@ -18,7 +18,6 @@ class WinRateVisualiser extends React.Component {
   }
 
   static getDerivedStateFromProps(next, prev) {
-    console.log(next)
     let matches = next.matches
 
     return {
@@ -57,8 +56,6 @@ class WinRateVisualiser extends React.Component {
       let drawsHeight = (draws / (i + 1) ) * canvas.height
       let p2Height = (wins[botIDs[1]] / (i + 1) ) * canvas.height
 
-      console.log(i * gameWidth, 0, gameWidth, p1Height)
-
       ctx.fillStyle = '#ee5253'
       ctx.fillRect(i * gameWidth, 0, gameWidth, p1Height)
       ctx.fillStyle = '#222f3e'
@@ -68,10 +65,7 @@ class WinRateVisualiser extends React.Component {
     }
   }
 
-  render() {
-    console.log('rendering visualiser')
-
-    return (
+  render() {return (
       <canvas className="winRateVisualiser" ref="winRateVisualiser" width="1000" height="400"></canvas>
     );
   }

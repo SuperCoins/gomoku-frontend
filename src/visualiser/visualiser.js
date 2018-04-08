@@ -103,8 +103,6 @@ class Visualiser extends React.Component {
   }
 
   render() {
-    console.log('rendering visualiser')
-
     return (
       <canvas className="visualiser" ref="visualiser" width="400" height="400"></canvas>
     );
