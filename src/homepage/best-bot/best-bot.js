@@ -25,7 +25,7 @@ class BestBot extends React.Component {
                 <div className="col bot-info-content">
                     <h3>{this.state.bot.botName}</h3>
                     <h5>{this.state.author.authorName}</h5>
-                    <p>With a glorious {this.state.bot.winRate * 100}% winrate!</p>
+                    <p>With a glorious {(this.state.bot.winRate * 100).toFixed(0)}% winrate!</p>
                     <p className="footer-quote">"Do you dare to challenge the smartest bot known to man?"</p>
                 </div>
             </div>);
